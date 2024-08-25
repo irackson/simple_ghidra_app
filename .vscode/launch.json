@@ -2,12 +2,21 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "DEBUG",
-			"type": "chrome",
+			"type": "node",
 			"request": "launch",
-			"url": "http://localhost:5500",
-			"webRoot": "${workspaceFolder}",
-			"file": "${workspaceFolder}/src/index.html"
+			"name": "Debug TypeScript",
+			"runtimeArgs": [
+				"--loader",
+				"ts-node/esm"
+			],
+			"args": [
+				"${workspaceFolder}/src/main.ts"
+			],
+			"sourceMaps": true,
+			"outFiles": [
+				"${workspaceFolder}/dist/**/*.js"
+			],
+			"cwd": "${workspaceFolder}"
 		}
 	]
 }
